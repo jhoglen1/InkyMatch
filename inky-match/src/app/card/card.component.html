@@ -1,6 +1,5 @@
 <div
-    id="myModal" class="modal">
-    <!-- Modal content -->
+    id="startModal" class="modal">
     <div class="modal-content">
         <h1 class="heading">Welcome to Inky Matching!</h1>
         <h2 class="rules-text">Rules:</h2>
@@ -15,22 +14,92 @@
     </div>
 </div>
 
-
 <div class="wrapper">
-    <div class="card">
-        <input class="box card-front" type="image" id="myimage-1" src="../assets/image-1-orange-1.png"/>
-        <input class="box card--back" type="image" id="myimage-1" src="../assets/image-2-blue-1.png"/>
-    </div>
-
-    <input class="box" type="image" id="myimage-2" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-3" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-4" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-5" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-6" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-7" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-8" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-9" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-10" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-11" src="../assets/image-1-orange-1.png"/>
-    <input class="box" type="image" id="myimage-12" src="../assets/image-1-orange-1.png"/>
+<div class="container">
+  <div class="base-card" data-intent="blue">
+      <img class="face-down" type="image" id="myimage-1" src="../assets/image-1-orange-1.png"/>
+      <img class="face-down face-up " type="image" id="myimage-1" src="../assets/image-2-blue-1.png"/>
+  </div>
 </div>
+<div class="container">
+  <div class="base-card" data-intent="green">
+<img class="face-down" type="image" id="myimage-2" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-2" src="../assets/image-3-green-1.png"/>
+  </div>
+</div>
+<div class="container">
+  <div class="base-card" data-intent="orange">
+<img class="face-down" type="image" id="myimage-3" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-3" src="../assets/image-7-gray-1.png"/>
+  </div>
+</div>
+<div class="container  ">
+  <div class="base-card" data-intent="yellow">
+ <img class="face-down" type="image" id="myimage-4" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-4" src="../assets/image-4-yellow-1.png"/>
+  </div>
+</div>
+
+<div class="container">
+  <div class="base-card" data-intent="black">
+        <img class="face-down" type="image" id="myimage-5" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-5" src="../assets/image-6-black-1.png"/>
+  </div>
+</div>
+
+<div class="container">
+  <div class="base-card" data-intent="green">
+ <img class="face-down" type="image" id="myimage-6" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-6" src="../assets/image-3-green-1.png"/>
+  </div>
+</div>
+<div class="container">
+  <div class="base-card" data-intent="black">
+ <img class="face-down" type="image" id="myimage-7" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-7" src="../assets/image-6-black-1.png"/>
+  </div>
+</div>
+<div class="container">
+  <div class="base-card" data-intent="purple">
+ <img class="face-down" type="image" id="myimage-8" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-8" src="../assets/image-5-purple-1.png"/>
+  </div>
+</div>
+<div class="container">
+  <div class="base-card" data-intent="blue">
+ <img class="face-down" type="image" id="myimage-9" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-9" src="../assets/image-2-blue-1.png"/>
+  </div>
+</div>
+<div class="container">
+  <div class="base-card" data-intent="yellow">
+ <img class="face-down" type="image" id="myimage-9" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-9" src="../assets/image-4-yellow-1.png"/>
+  </div>
+</div>
+<div class="container">
+  <div class="base-card" data-intent="orange">
+ <img class="face-down" type="image" id="myimage-10" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-10" src="../assets/image-7-gray-1.png"/>
+  </div>
+</div>
+<div class="container">
+  <div class="base-card"data-intent="purple">
+ <img class="face-down" type="image" id="myimage-11" src="../assets/image-1-orange-1.png"/>
+        <img class="face-down face-up " type="image" id="myimage-11" src="../assets/image-5-purple-1.png"/>
+  </div>
+</div>
+
+</div>
+<div
+    id="endModal" class="modal">
+    <div class="modal-content">
+        <h1 class="heading">Thanks for Playing!</h1>
+        <h2 *ngIf="showFirstTryMessage" class="heading">Whoa First try, you have the memory of a dolphin!!!</h2>
+        <h2 *ngIf="!showFirstTryMessage" class="heading">Not 
+            terrible but lets see if you can do better this time!</h2>
+        <h3 class="heading">Tries to match all cards : {{this.triesCount}}</h3>
+
+    </div>
+</div>
+
