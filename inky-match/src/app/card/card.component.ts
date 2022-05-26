@@ -17,11 +17,13 @@ export class CardComponent implements OnInit {
   triesCount: number = 0;
   showFirstTryMessage: boolean = false;
   countclick: number = 0;
+  checkGame: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.startGameModal();
+    this.checkGame = sessionStorage.getItem("game");
+    this.checkGame === "Game On" ? (this.shuffleCards(), this.onFlipOFcard()) : this.startGameModal();
   }
   // on page load show modal and onclick of start button close modal
   startGameModal(): void {
@@ -32,7 +34,6 @@ export class CardComponent implements OnInit {
     document.getElementById("startButton").addEventListener("click", () => {
       modal.style.display = "none";
     })
-
   }
   /// gets the flipped card value 
   // loops thru the array of cards 
@@ -83,6 +84,7 @@ export class CardComponent implements OnInit {
   reStartGameModal(): void {
     let modal = document.getElementById("endModal");
     modal.style.display = "block";
+    sessionStorage.setItem("game", "Game On")
     setTimeout(() => {
       location.reload();
     }, 6500);
